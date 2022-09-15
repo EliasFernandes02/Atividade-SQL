@@ -141,6 +141,7 @@ SELECT
     FROM tb_historico
 
     -- entrelaçando tabelas
+    
 INNER JOIN
     ON tb_historico.ID_TURMA = tb_turma.ID
 
@@ -150,8 +151,11 @@ INNER JOIN
 
 SELECT 
     tb_historico.MAT_ALUNO as matricula
+
     FROM tb_historico
-    -- entrelaçando tabelas
+
+-- entrelaçando tabelas
+
 INNER JOIN tb_turma
     ON tb_historico.ID_TURMA = tb_turma.ID
 
@@ -162,6 +166,7 @@ WHERE
 -- c) Encontre a MAT e calcule a média das notas dos alunos na disciplina de POO em 2015 e que esta média seja superior a 6.
 
 -- Selecionando os dados de matricula, nota e disciplina:
+
 SELECT 
     tb_historico.MAT_ALUNO as `matricula`,
     tb_historico.nota as `nota`,
@@ -178,12 +183,14 @@ WHERE
         tb_turma.COD_DISC ='POO';
 
 -- Fazendo a média
+
 SELECT 
     AVG(tb_historico.nota) as `Média`,
     tb_turma as `disciplina`
         FROM tb_historico
 
 -- Entrelaçando as tabelas
+
 INNER JOIN tb_turma
         ON tb_historico.ID_TURMA = tb_turma.ID
 
